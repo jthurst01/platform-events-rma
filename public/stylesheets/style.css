@@ -1,8 +1,24 @@
 body {
-  padding: 50px;
+  padding: 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.wrapper {
+  margin-left: 200px;
+}
+.right {
+  float: right;
+  width: 100%;
+}
+.left {
+  float: left;
+  width: 800px;
+  margin-left: -200px;
+}
+.cleared {
+  clear: both;
 }
