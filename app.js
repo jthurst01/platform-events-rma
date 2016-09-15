@@ -19,7 +19,7 @@ var org = nforce.createConnection({
   clientId: config.CLIENT_ID,
   clientSecret: config.CLIENT_SECRET,
   redirectUri: config.CALLBACK_URL + '/oauth/_callback',
-  mode: 'multi',
+  mode: 'single',
   environment: config.ENVIRONMENT  // optional, sandbox or production, production default
 });
 
