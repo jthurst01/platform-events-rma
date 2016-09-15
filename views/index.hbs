@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<link rel="stylesheet" href="/stylesheets/style.css" />
+		<link rel="stylesheet" href="/assets/styles/salesforce-lightning-design-system.min.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript">			var socket = io();
+			socket.on('record-processed', function (data) {
+				var results = JSON.parse(data);
+				console.log(results);
+				$('#messages').append('<br/><p>Notification </br>' +
+					   'Replay Id:           ' + results['event']['replayId'] + '<br>' +
+					   'Account Executive:   ' + results['payload']['Account_Executive__c'] + '<br/>' + 
+					  'Email Address:       ' + results['payload']['Email_Address__c'] + '<br/>' +
+					  'Phone Number:        ' + results['payload']['Phone_Number__c'] + '<br/>' +
+					  'Contact by Date:     ' + results['payload']['Contact_by_Date__c'] + '<br/>' +
+					  '===========================<br/></p>');
+			})
+		</script>
+	</head>
+	<body>
+		<div id="leftcontent" class="leftcontent">
+			<div class="innertube">
+				<div id='platform-events-node'>
+					<div class="slds slds-m-vertical--large slds-m-horizontal--large">
+						<!-- MASTHEAD -->
+						<p class="slds-text-heading--label slds-m-bottom--small">Salesforce Platform Events <-> Heroku Demo</p>
+						<!-- / MASTHEAD -->
+						<!-- PAGE HEADER -->
+						<div class="slds-page-header" role="banner">
+
+							<!-- LAYOUT GRID -->
+							<div class="slds-grid">
+
+								<!-- GRID COL -->
+								<div class="slds-col">
+
+									<!-- HEADING AREA -->
+									<!-- MEDIA OBJECT = FIGURE + BODY -->
+									<div class="slds-media">
+
+										<div class="slds-media__figure">
+											<svg aria-hidden="true" class="slds-icon slds-icon--large slds-icon-custom-88">
+												<use xlink:href="/assets/icons/custom-sprite/svg/symbols.svg#custom88"></use>
+											</svg>
+										</div>
+
+										<div class="slds-media__body">
+											<p class="slds-text-heading--label">Customer Order</p>
+											<h1 class="slds-text-heading--medium">New Customer Order</h1>
+										</div>
+
+									</div>
+									<!-- / MEDIA OBJECT -->
+									<!-- HEADING AREA -->
+
+								</div>
+
+							</div>
+							<!-- / LAYOUT GRID -->
+
+						</div>
+						<!-- / PAGE HEADER -->
+						<!-- PRIMARY CONTENT WRAPPER -->
+						<div class="myapp">
+							<!-- CREATE NEW PRINTER INK LEVEL EVENT -->
+							<div aria-labelledby="newpieform">
+								<!-- BOXED AREA -->
+								<fieldset class="slds-box slds-theme--default">
+									<!-- CREATE NEW PRINTER INK LEVEL EVENT FORM -->
+									<form action="/" method="post" class="slds-form--stacked">
+										<div class="slds-grid">
+											<div class="slds-col--padded slds-size--1-of-1">
+												<div class="slds-form-element slds-is-required">
+													<label class="slds-form-element__label" for="customerId">Customer Id</label>
+													<div class="slds-form-element__control">
+														<select name="customerId" id="customerId" class="slds-select" required>
+															<option>0100000002</option>
+															<option>0100000004</option>
+															<option>0100000005</option>
+															<option>0100000006</option>
+															<option>0100000008</option>
+														</select>
+														<!-- span id="customerIdHelp" class="slds-form-element__help">You must enter a Customer Id.</span -->
+													</div>
+												</div>
+												<div class="slds-form-element slds-is-required">
+													<label class="slds-form-element__label" for="productName">Product Name</label>
+													<div class="slds-form-element__control">
+														<select name="productName" id="productName" class="slds-select" required>
+															<option>Wonderful Widgets</option>
+															<option>Spectacular Sprockets</option>
+															<option>Terrific Thingamajigs</option>
+														</select>
+														<!-- span id="customerIdHelp" class="slds-form-element__help">You must enter a Printer Model.</span -->
+													</div>
+												</div>
+												<div class="slds-form-element slds-is-required">
+													<label class="slds-form-element__label" for="numberOfUnits">Number of Units</label>
+													<div class="slds-form-element__control">
+														<input name="numberOfUnits" id="numberOfUnits" class="slds-input" type="number" required/>
+														<!--span id="printerInkLevelHelp" class="slds-form-element__help">You must enter a Printer Ink Level.</span-->
+													</div>
+												</div>
+												<div class="slds-form-element slds-is-required">
+													<label class="slds-form-element__label" for="totalAmount">Total Amount</label>
+													<div class="slds-form-element__control">
+														<input name="totalAmount" id="totalAmount" class="slds-input" type="number" required/>
+														<!--span id="printerInkLevelHelp" class="slds-form-element__help">You must enter a Printer Ink Level.</span-->
+													</div>
+												</div>
+											</div>
+										</div>
+										<button class="slds-button slds-button--brand slds-m-top--medium" id="createBtn" >Create Customer Order</button>
+									</form>
+									<!-- CREATE NEW PRINTER INK LEVEL EVENT FORM -->
+								</fieldset>
+								<!-- / BOXED AREA -->
+							</div>
+							<!-- / CREATE NEW PRINTER INK LEVEL EVENT -->
+						</div>
+						<!-- / PRIMARY CONTENT WRAPPER -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="messages" class="slds-text-heading--label slds-m-vertical--large slds-m-horizontal--large"><h1>Platform Event Live Stream</h1></div> 
+	</body>
+</html>
+
