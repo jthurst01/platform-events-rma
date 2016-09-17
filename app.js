@@ -31,8 +31,6 @@ org.authenticate({ username: config.USERNAME, password: config.PASSWORD }, funct
     // add any logic to perform after login
   }
 
-  // subscribe to a pushtopic
-  //var str = org.stream({ topic: config.TOPIC, isPlatformEvent: true, oauth: oauth });
   var cj = org.createStreamClient();
   var str = cj.subscribe({ topic: config.TOPIC, isPlatformEvent: true, oauth: oauth });
 
@@ -104,4 +102,5 @@ app.use(function(err, req, res, next) {
 });
 
 
-module.exports = {app: app, server: server};
+module.exports = {app: app, server: server, org: org};
+exports.org = org;
