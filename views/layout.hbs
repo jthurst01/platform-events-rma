@@ -11,7 +11,8 @@
 			socket.on('event-processed', function (data) {
 				var results = JSON.parse(data);
 				console.log(results);							  
-				$('#messages').append('<div class="slds-tile slds-media slds-box">' +
+				
+				var newPlatformEvent = '<div class="slds-tile slds-media slds-box">' +
 					'	<div class="slds-media__figure">' +
 					'		<svg aria-hidden="true" class="slds-icon slds-icon--standard slds-icon-custom-23">' +
 					'			<use xlink:href="/assets/icons/custom-sprite/svg/symbols.svg#custom23"></use>' +
@@ -72,7 +73,9 @@
 					'			</dl>' +
 					'		</div>' +
 					'	</div>' +
-					'</div>');
+					'</div>';
+				
+				$(newPlatformEvent).prependTo('#messages').hide().slideDown();
 					  
 			})
 			
