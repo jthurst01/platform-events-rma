@@ -1,117 +1,117 @@
-	<body>
-		<div id='platform-events-node' class='slds-grid slds-wrap slds-grid--pull-padded'>
-			<!-- MASTHEAD -->
-			<h3 class="slds-size--1-of-1 slds-text-heading--medium slds-text-align--center slds-theme--shade slds-m-around--small">Salesforce Platform Events <-> Heroku Demo</h3>
-			<!-- / MASTHEAD -->
-			<div class="slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-2">
-				<!-- PAGE HEADER -->
-				<div class="slds-page-header" role="banner">
-					<!-- LAYOUT GRID -->
+<body>
+	<div id='platform-events-node' class='slds-grid slds-wrap slds-grid--pull-padded'>
+		<!-- MASTHEAD -->
+		<h3 class="slds-size--1-of-1 slds-text-heading--medium slds-text-align--center slds-theme--shade slds-m-around--small">Salesforce Platform Events <-> Heroku Demo</h3>
+		<!-- / MASTHEAD -->
+		<div class="slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-2">
+			<!-- PAGE HEADER -->
+			<div class="slds-page-header" role="banner">
+				<!-- LAYOUT GRID -->
+				<div class="slds-grid">
+					<!-- GRID COL -->
+					<div class="slds-col">
+						<!-- HEADING AREA -->
+						<!-- MEDIA OBJECT = FIGURE + BODY -->
+						<div class="slds-media">
+							<div class="slds-media__figure">
+								<svg aria-hidden="true" class="slds-icon slds-icon--large slds-icon-custom-88">
+									<use xlink:href="/assets/icons/custom-sprite/svg/symbols.svg#custom88"></use>
+								</svg>
+							</div>
+							<div class="slds-media__body">
+								<p class="slds-text-heading--label">Customer Order</p>
+								<h1 class="slds-text-heading--medium">New Customer Order</h1>
+							</div>
+						</div>
+						<!-- / MEDIA OBJECT -->
+						<!-- HEADING AREA -->
+					</div>
+				</div>
+				<!-- / LAYOUT GRID -->
+			</div>
+			<!-- / PAGE HEADER -->
+			<!-- PRIMARY CONTENT WRAPPER -->
+			<div class="myapp">
+				<!-- CREATE NEW CUSTOMER ORDER EVENT -->
+				<div aria-labelledby="newpieform">
+					<!-- BOXED AREA -->
+					<fieldset class="slds-box slds-theme--default">
+						<!-- CREATE NEW CUSTOMER ORDER EVENT FORM>
+						<form action="/" method="post" class="slds-form--stacked" -->
+						<form class="slds-form--stacked">
+							<div class="slds-grid">
+								<div class="slds-col--padded slds-size--1-of-1">
+									<div class="slds-form-element slds-is-required">
+										<label class="slds-form-element__label" for="customerId">Customer Id</label>
+										<div class="slds-form-element__control">
+											<select name="customerId" id="customerId" class="slds-select" required>
+												<option>0100000002</option>
+												<option>0100000004</option>
+												<option>0100000005</option>
+												<option>0100000006</option>
+												<option>0100000008</option>
+											</select>
+										</div>
+									</div>
+									<div class="slds-form-element slds-is-required">
+										<label class="slds-form-element__label" for="productName">Product Name</label>
+										<div class="slds-form-element__control">
+											<select name="productName" id="productName" class="slds-select" required>
+												<option>Wonderful Widgets</option>
+												<option>Spectacular Sprockets</option>
+												<option>Terrific Thingamajigs</option>
+											</select>
+										</div>
+									</div>
+									<div class="slds-form-element slds-is-required">
+										<label class="slds-form-element__label" for="numberOfUnits">Number of Units</label>
+										<div class="slds-form-element__control">
+											<input name="numberOfUnits" id="numberOfUnits" class="slds-input" type="number" required/>
+										</div>
+									</div>
+									<div class="slds-form-element slds-is-required">
+										<label class="slds-form-element__label" for="totalAmount">Total Amount</label>
+										<div class="slds-form-element__control">
+											<input name="totalAmount" id="totalAmount" class="slds-input" type="number" required/>
+										</div>
+									</div>
+								</div>
+							</div>
+							<button class="slds-button slds-button--brand slds-m-top--medium" id="createBtn" type="submit">Create Customer Order</button>
+						</form>
+						<!-- CREATE NEW CUSTOMER ORDER EVENT FORM -->
+					</fieldset>
+					<!-- / BOXED AREA -->
+				</div>
+				<!-- / CREATE NEW CUSTOMER ORDER EVENT -->
+			</div>
+			<!-- / PRIMARY CONTENT WRAPPER -->
+		</div>
+		<div class="slds-grid slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-2">
+			<div class="slds-size--1-of-1">
+				<div class="slds-text-heading--medium slds-page-header">
 					<div class="slds-grid">
 						<!-- GRID COL -->
 						<div class="slds-col">
-							<!-- HEADING AREA -->
 							<!-- MEDIA OBJECT = FIGURE + BODY -->
 							<div class="slds-media">
 								<div class="slds-media__figure">
-									<svg aria-hidden="true" class="slds-icon slds-icon--large slds-icon-custom-88">
-										<use xlink:href="/assets/icons/custom-sprite/svg/symbols.svg#custom88"></use>
+									<svg aria-hidden="true" class="slds-icon slds-icon--large slds-icon-custom-23">
+										<use xlink:href="/assets/icons/custom-sprite/svg/symbols.svg#custom23"></use>
 									</svg>
 								</div>
 								<div class="slds-media__body">
-									<p class="slds-text-heading--label">Customer Order</p>
-									<h1 class="slds-text-heading--medium">New Customer Order</h1>
+									<p class="slds-text-heading--label">Platform Event Live Stream</p>
+									<h1 class="slds-text-heading--medium">Received Order Responses</h1>
 								</div>
 							</div>
 							<!-- / MEDIA OBJECT -->
-							<!-- HEADING AREA -->
 						</div>
 					</div>
-					<!-- / LAYOUT GRID -->
-				</div>
-				<!-- / PAGE HEADER -->
-				<!-- PRIMARY CONTENT WRAPPER -->
-				<div class="myapp">
-					<!-- CREATE NEW CUSTOMER ORDER EVENT -->
-					<div aria-labelledby="newpieform">
-						<!-- BOXED AREA -->
-						<fieldset class="slds-box slds-theme--default">
-							<!-- CREATE NEW CUSTOMER ORDER EVENT FORM>
-							<form action="/" method="post" class="slds-form--stacked" -->
-							<form class="slds-form--stacked">
-								<div class="slds-grid">
-									<div class="slds-col--padded slds-size--1-of-1">
-										<div class="slds-form-element slds-is-required">
-											<label class="slds-form-element__label" for="customerId">Customer Id</label>
-											<div class="slds-form-element__control">
-												<select name="customerId" id="customerId" class="slds-select" required>
-													<option>0100000002</option>
-													<option>0100000004</option>
-													<option>0100000005</option>
-													<option>0100000006</option>
-													<option>0100000008</option>
-												</select>
-											</div>
-										</div>
-										<div class="slds-form-element slds-is-required">
-											<label class="slds-form-element__label" for="productName">Product Name</label>
-											<div class="slds-form-element__control">
-												<select name="productName" id="productName" class="slds-select" required>
-													<option>Wonderful Widgets</option>
-													<option>Spectacular Sprockets</option>
-													<option>Terrific Thingamajigs</option>
-												</select>
-											</div>
-										</div>
-										<div class="slds-form-element slds-is-required">
-											<label class="slds-form-element__label" for="numberOfUnits">Number of Units</label>
-											<div class="slds-form-element__control">
-												<input name="numberOfUnits" id="numberOfUnits" class="slds-input" type="number" required/>
-											</div>
-										</div>
-										<div class="slds-form-element slds-is-required">
-											<label class="slds-form-element__label" for="totalAmount">Total Amount</label>
-											<div class="slds-form-element__control">
-												<input name="totalAmount" id="totalAmount" class="slds-input" type="number" required/>
-											</div>
-										</div>
-									</div>
-								</div>
-								<button class="slds-button slds-button--brand slds-m-top--medium" id="createBtn" type="submit">Create Customer Order</button>
-							</form>
-							<!-- CREATE NEW CUSTOMER ORDER EVENT FORM -->
-						</fieldset>
-						<!-- / BOXED AREA -->
-					</div>
-					<!-- / CREATE NEW CUSTOMER ORDER EVENT -->
-				</div>
-				<!-- / PRIMARY CONTENT WRAPPER -->
-			</div>
-			<div class="slds-grid slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-2">
-				<div class="slds-size--1-of-1">
-					<div class="slds-text-heading--medium slds-page-header">
-						<div class="slds-grid">
-							<!-- GRID COL -->
-							<div class="slds-col">
-								<!-- MEDIA OBJECT = FIGURE + BODY -->
-								<div class="slds-media">
-									<div class="slds-media__figure">
-										<svg aria-hidden="true" class="slds-icon slds-icon--large slds-icon-custom-23">
-											<use xlink:href="/assets/icons/custom-sprite/svg/symbols.svg#custom23"></use>
-										</svg>
-									</div>
-									<div class="slds-media__body">
-										<p class="slds-text-heading--label">Platform Event Live Stream</p>
-										<h1 class="slds-text-heading--medium">Received Order Responses</h1>
-									</div>
-								</div>
-								<!-- / MEDIA OBJECT -->
-							</div>
-						</div>
-					</div> 
-					<div id="messages" class="slds-text-title--caps"><h1></h1></div> 
-				</div>
+				</div> 
+				<div id="messages" class="slds-text-title--caps"><h1></h1></div> 
 			</div>
 		</div>
+	</div>
 
 
