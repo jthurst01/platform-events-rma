@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<link rel="stylesheet" href="/assets/stylesheets/style.css" />
+		<link rel="stylesheet" href="/assets/styles/salesforce-lightning-design-system.min.css" />
+		<script src="/assets/scripts/jquery.min.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript">			
+			var socket = io();
+			socket.on('event-processed', function (data) {
+				var results = JSON.parse(data);
+				console.log(results);							  
+				$('#messages').append('<div class="slds-tile slds-media slds-box">' +
+					'	<div class="slds-media__figure">' +
+					'		<svg aria-hidden="true" class="slds-icon slds-icon--standard slds-icon-custom-23">' +
+					'			<use xlink:href="/assets/icons/custom-sprite/svg/symbols.svg#custom23"></use>' +
+					'		</svg>' +
+					'	</div>' +
+					'	<div class="slds-media__body">' +
+					'		<h3 class="slds-truncate" title="Salesforce UX">Order Response Platform Event</h3>' +
+					'		<div class="slds-tile__detail slds-text-body--small">' +
+					'			<dl class="slds-dl--horizontal">' +
+					'				<dt class="slds-dl--horizontal__label">' +
+					'					<p class="slds-truncate" title="Replay Id">Replay Id:</p>' +
+					'				</dt>' +
+					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
+					'					<p class="slds-truncate" title="' + results['event']['replayId'] + '">' + results['event']['replayId'] + '</p>' +
+					'				</dd>' +
+						
+					'				<dt class="slds-dl--horizontal__label">' +
+					'					<p class="slds-truncate" title="Account Executive">Account Executive:</p>' +
+					'				</dt>' +
+					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
+					'					<p class="slds-truncate" title="' + results['payload']['Account_Executive__c'] + '">' + results['payload']['Account_Executive__c'] + '</p>' +
+					'				</dd>' +
+										
+					'				<dt class="slds-dl--horizontal__label">' +
+					'					<p class="slds-truncate" title="Email Address">Email Address:</p>' +
+					'				</dt>' +
+					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
+					'					<p class="slds-truncate" title="' + results['payload']['Email_Address__c'] + '">' + results['payload']['Email_Address__c'] + '</p>' +
+					'				</dd>' +
+						
+					'				<dt class="slds-dl--horizontal__label">' +
+					'					<p class="slds-truncate" title="Phone Number">Phone Number:</p>' +
+					'				</dt>' +
+					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
+					'					<p class="slds-truncate" title="' + results['payload']['Phone_Number__c'] + '">' + results['payload']['Phone_Number__c'] + '</p>' +
+					'				</dd>' +
+						
+					'				<dt class="slds-dl--horizontal__label">' +
+					'					<p class="slds-truncate" title="Contact by Date">Contact by Date:</p>' +
+					'				</dt>' +
+					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
+					'					<p class="slds-truncate" title="' + results['payload']['Contact_by_Date__c'] + '">' + results['payload']['Contact_by_Date__c'] + '</p>' +
+					'				</dd>' +
+						
+					'				<dt class="slds-dl--horizontal__label">' +
+					'					<p class="slds-truncate" title="Opportunity Name">Opportunity Name:</p>' +
+					'				</dt>' +
+					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
+					'					<p class="slds-truncate" title="' + results['payload']['Opportunity_Name__c'] + '">' + results['payload']['Opportunity_Name__c'] + '</p>' +
+					'				</dd>' +
+							
+					'				<dt class="slds-dl--horizontal__label">' +
+					'					<p class="slds-truncate" title="Created Method">Created Method:</p>' +
+					'				</dt>' +
+					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
+					'					<p class="slds-truncate" title="' + results['payload']['Created_Method__c'] + '">' + results['payload']['Created_Method__c'] + '</p>' +
+					'				</dd>' +
+					'			</dl>' +
+					'		</div>' +
+					'	</div>' +
+					'</div>');
+					  
+			})
+			
+			$(document).ready(function() {
+				$("#createBtn").click(function(event) {
+					event.preventDefault();
+					console.log('In click');
+					var eventObj = {};
+					eventObj["customerId"] = $('#customerId').val();
+					eventObj["productName"] = $('#productName').val();
+					eventObj["numberOfUnits"] = $('#numberOfUnits').val();
+					eventObj["totalAmount"] = $('#totalAmount').val();
+					console.log('eventObj: ' + JSON.stringify(eventObj));
+					$.post('/', eventObj, function(resp) {
+						console.log("post response: " + resp);
+					});
+				});
+			});
+			
+		</script>
+	</head>
+	<body>
+    	{{{body}}}
+	</body>
+</html>
