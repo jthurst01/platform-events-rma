@@ -76,29 +76,19 @@
 					  
 			})
 			
-			function sendEvent(eventObj, callback) {
-				$.ajax("/", {
-					method: 'POST',
-					contentType: "application/json",
-					data: JSON.stringify(eventObj),
-					success : function(data) {
-						console.log('In AJAX success');
-						if ($.isFunction(callback)) {
-							callback(data);
-						}
-					}
-				});
-			};
-			
 			$(document).ready(function() {
-				$("#createBtn").click(function() {
+				$("#createBtn").click(function(event) {
+					event.preventDefault();
 					console.log('In click');
 					var eventObj = {};
-					eventObj["customerId"] = $('#customerId').value;
-					eventObj["productName"] = $('#productName').value;
-					eventObj["numberOfUnits"] = $('#numberOfUnits').value;
-					eventObj["totalAmount"] = $('#totalAmount').value;
+					eventObj["customerId"] = $('#customerId').val();
+					eventObj["productName"] = $('#productName').val();
+					eventObj["numberOfUnits"] = $('#numberOfUnits').val();
+					eventObj["totalAmount"] = $('#totalAmount').val();
 					console.log('eventObj: ' + JSON.stringify(eventObj));
+					$.post('/', eventObj, function(resp) {
+						console.log("post response: " + resp);
+					});
 				});
 			});
 			
@@ -142,8 +132,9 @@
 					<div aria-labelledby="newpieform">
 						<!-- BOXED AREA -->
 						<fieldset class="slds-box slds-theme--default">
-							<!-- CREATE NEW CUSTOMER ORDER EVENT FORM -->
-							<form action="/" method="post" class="slds-form--stacked">
+							<!-- CREATE NEW CUSTOMER ORDER EVENT FORM>
+							<form action="/" method="post" class="slds-form--stacked" -->
+							<form class="slds-form--stacked">
 								<div class="slds-grid">
 									<div class="slds-col--padded slds-size--1-of-1">
 										<div class="slds-form-element slds-is-required">
@@ -182,7 +173,7 @@
 										</div>
 									</div>
 								</div>
-								<button class="slds-button slds-button--brand slds-m-top--medium" id="createBtn">Create Customer Order</button>
+								<button class="slds-button slds-button--brand slds-m-top--medium" id="createBtn" type="submit">Create Customer Order</button>
 							</form>
 							<!-- CREATE NEW CUSTOMER ORDER EVENT FORM -->
 						</fieldset>
