@@ -1,0 +1,64 @@
+.increase_icon {
+    background-image: url( /img/apexpages/editor/increase_font_size.gif );
+    width:20px;
+    height:20px;
+    background-position: top left;
+    margin:0px 5px;
+}
+
+.increase_iconOn {
+    background-image: url( /img/apexpages/editor/increase_font_size.gif );
+    width:20px;
+    height:20px;
+    background-position: top right;
+    margin:0px 5px;
+}
+
+
+.increase_disabled_icon {
+    background-image: url( /img/apexpages/editor/increase_font_size_disabled.gif );
+    width:20px;
+    height:20px;
+    background-position: top left;
+    margin:0px 5px;
+}
+
+.increase_disabled_iconOn {
+    background-image: url( /img/apexpages/editor/increase_font_size_disabled.gif );
+    width:20px;
+    height:20px;
+    background-position: top right;
+    margin:0px 5px;
+}
+
+.decrease_icon {
+    background-image: url( /img/apexpages/editor/decrease_font_size.gif );
+    width:20px;
+    height:20px;
+    background-position: top left;
+    margin:0px 5px;
+}
+
+.decrease_iconOn {
+    background-image: url( /img/apexpages/editor/decrease_font_size.gif );
+    width:20px;
+    height:20px;
+    background-position: top right;
+    margin:0px 5px;
+}
+
+.decrease_disabled_icon {
+    background-image: url( /img/apexpages/editor/decrease_font_size_disabled.gif );
+    width:20px;
+    height:20px;
+    background-position: top left;
+    margin:0px 5px;
+}
+
+.decrease_disabled_iconOn {
+    background-image: url( /img/apexpages/editor/decrease_font_size_disabled.gif );
+    width:20px;
+    height:20px;
+    background-position: top right;
+    margin:0px 5px;
+}

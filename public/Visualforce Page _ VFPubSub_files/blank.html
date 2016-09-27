@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!-- saved from url=(0139)https://na2.salesforce.com/06640000000UIpG/e?retURL=%2Fapexpages%2Fsetup%2FviewApexPage.apexp%3Fid%3D06640000000UIpG%26id%3D06640000000UIpG -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>EditArea</title>
+	
+	<link href="./edit_area.css" rel="stylesheet" type="text/css">
+	<script language="javascript" type="text/javascript" src="./edit_area.js"></script><script language="javascript" type="text/javascript" src="./manage_area.js"></script><script language="javascript" type="text/javascript" src="./edit_area_functions.js"></script><script language="javascript" type="text/javascript" src="./keyboard.js"></script><script language="javascript" type="text/javascript" src="./search_replace.js"></script><script language="javascript" type="text/javascript" src="./highlight.js"></script><script language="javascript" type="text/javascript" src="./regexp.js"></script><script language="javascript" type="text/javascript" src="./links.js"></script><link type="text/css" rel="stylesheet" media="all" href="./links.css"><script type="text/javascript" src="./functions(1).js" charset="UTF-8"></script><script type="text/javascript" src="./link_functions.js" charset="UTF-8"></script><script language="javascript" type="text/javascript" src="./en(1).js"></script><script language="javascript" type="text/javascript" src="./font_resize.js"></script><link type="text/css" rel="stylesheet" media="all" href="./font_resize.css"><script language="javascript" type="text/javascript" src="./en(2).js"></script><script language="javascript" type="text/javascript" src="./autosuggest(1).js"></script><script language="javascript" type="text/javascript" src="./en(3).js"></script>
+<style type="text/css" media="all"></style><style type="text/css" media="all"></style><link rel="stylesheet" type="text/css" href="./codeeditor.css"></head>
+<body>
+	<div id="editor" style="position: absolute;">
+		<div class="area_toolbar" id="toolbar_1"><a id="a_search" href="javascript:editArea.execCommand(&#39;show_search&#39;)" onclick="editArea.execCommand(&#39;show_search&#39;);return false;" onmousedown="return false;" target="_self" filespecific="no"><img id="search" src="./s.gif" title="Search" class="search_icon" onmouseover="editArea.switchClass(this,&#39;search_iconOn&#39;);" onmouseout="editArea.restoreClass(this);" onmousedown="editArea.restoreAndSwitchClass(this,&#39;search_icon&#39;);"></a><a id="a_go_to_line" href="javascript:editArea.execCommand(&#39;go_to_line&#39;)" onclick="editArea.execCommand(&#39;go_to_line&#39;);return false;" onmousedown="return false;" target="_self" filespecific="no"><img id="go_to_line" src="./s.gif" title="Go To Line" class="go_to_line_icon" onmouseover="editArea.switchClass(this,&#39;go_to_line_iconOn&#39;);" onmouseout="editArea.restoreClass(this);" onmousedown="editArea.restoreAndSwitchClass(this,&#39;go_to_line_icon&#39;);"></a><img src="./spacer(1).gif" width="1" height="15" class="editAreaSeparatorLine"><a id="a_undo" href="javascript:editArea.execCommand(&#39;undo&#39;)" onclick="editArea.execCommand(&#39;undo&#39;);return false;" onmousedown="return false;" target="_self" filespecific="yes"><img id="undo" src="./s.gif" title="Undo" class="undo_icon" onmouseover="editArea.switchClass(this,&#39;undo_iconOn&#39;);" onmouseout="editArea.restoreClass(this);" onmousedown="editArea.restoreAndSwitchClass(this,&#39;undo_icon&#39;);"></a><a id="a_redo" href="javascript:editArea.execCommand(&#39;redo&#39;)" onclick="editArea.execCommand(&#39;redo&#39;);return false;" onmousedown="return false;" target="_self" filespecific="yes"><img id="redo" src="./s.gif" title="Redo" class="redo_disabled_icon" onmouseover="editArea.switchClass(this,&#39;redo_iconOn&#39;);" onmouseout="editArea.restoreClass(this);" onmousedown="editArea.restoreAndSwitchClass(this,&#39;redo_icon&#39;);"></a><img src="./spacer(1).gif" width="1" height="15" class="editAreaSeparatorLine"><span><input type="hidden" id="area_font_size" value="10"><a id="a_increase" href="javascript:editArea.execCommand(&#39;increase&#39;)" onclick="editArea.execCommand(&#39;increase&#39;);return false;" onmousedown="return false;" target="_self" filespecific="yes"><img id="increase_fontImg" src="./s.gif" title="Increase Font Size" class="increase_icon" onmouseover="this.style.backgroundPosition=&#39;top right&#39;" onmouseup="this.style.backgroundPosition=&#39;top right&#39;" onmouseout="this.style.backgroundPosition=&#39;top left&#39;" onmousedown="this.style.backgroundPosition=&#39;top left&#39;"></a><a id="a_decrease" href="javascript:editArea.execCommand(&#39;decrease&#39;)" onclick="editArea.execCommand(&#39;decrease&#39;);return false;" onmousedown="return false;" target="_self" filespecific="yes"><img id="decrease_fontImg" src="./s.gif" title="Decrease Font Size" class="decrease_icon" onmouseover="this.style.backgroundPosition=&#39;top right&#39;" onmouseup="this.style.backgroundPosition=&#39;top right&#39;" onmouseout="this.style.backgroundPosition=&#39;top left&#39;" onmousedown="this.style.backgroundPosition=&#39;top left&#39;"></a></span></div>
+		<div class="area_toolbar" id="tab_browsing_area"><ul id="tab_browsing_list" class="menu"> <li> </li> </ul></div>
+		<div id="result" style="height: 454px; width: 2189px;">
+			<div id="no_file_selected"></div>
+			<div id="container" class="" style="width: 2139px; height: 392px;">
+				<div id="cursor_pos" class="edit_area_cursor" style="display: block; font-family: monospace; font-size: 10pt; line-height: 15px; top: 195px; visibility: visible; left: 181px;">(</div>
+				<div id="end_bracket" class="edit_area_cursor" style="display: block; font-family: monospace; font-size: 10pt; line-height: 15px; visibility: visible; top: 195px; left: 525px;">)</div>
+				<div id="selection_field" class="" style="display: block; font-family: monospace; font-size: 10pt; line-height: 15px; top: 195px; width: 2139px; height: 15px;">            alert('In publishVF func on VF Page:  '+ message); 
+</div>
+				<div id="line_number" selec="none" style="font-family: monospace; font-size: 10pt; line-height: 15px;"><div id="line_1">1</div><div id="line_2">2</div><div id="line_3">3</div><div id="line_4">4</div><div id="line_5">5</div><div id="line_6">6</div><div id="line_7">7</div><div id="line_8">8</div><div id="line_9">9</div><div id="line_10">10</div><div id="line_11">11</div><div id="line_12">12</div><div id="line_13">13</div><div id="line_14">14</div><div id="line_15">15</div><div id="line_16">16</div><div id="line_17">17</div><div id="line_18">18</div><div id="line_19">19</div><div id="line_20">20</div><div id="line_21">21</div><div id="line_22">22</div><div id="line_23">23</div><div id="line_24">24</div><div id="line_25">25</div><div id="line_26">26</div><div id="line_27">27</div><div id="line_28">28</div><div id="line_29">29</div><div id="line_30">30</div><div id="line_31">31</div><div id="line_32">32</div><div id="line_33">33</div><div id="line_34">34</div><div id="line_35">35</div><div id="line_36">36</div><div id="line_37">37</div><div id="line_38">38</div><div id="line_39">39</div><div id="line_40">40</div><div id="line_41">41</div><div id="line_42">42</div><div id="line_43">43</div><div id="line_44">44</div><div id="line_45">45</div><div id="line_46">46</div><div id="line_47">47</div><div id="line_48">48</div><div id="line_49">49</div><div id="line_50">50</div><div id="line_51">51</div><div id="line_52">52</div><div id="line_53">53</div><div id="line_54">54</div><div id="line_55">55</div><div id="line_56">56</div><div id="line_57">57</div><div id="line_58">58</div><div id="line_59">59</div><div id="line_60">60</div><div id="line_61">61</div><div id="line_62">62</div><div id="line_63">63</div><div id="line_64">64</div><div id="line_65">65</div><div id="line_66">66</div><div id="line_67">67</div><div id="line_68">68</div><div id="line_69">69</div><div id="line_70">70</div><div id="line_71">71</div><div id="line_72">72</div><div id="line_73">73</div><div id="line_74">74</div><div id="line_75">75</div><div id="line_76">76</div><div id="line_77">77</div><div id="line_78">78</div><div id="line_79">79</div><div id="line_80">80</div><div id="line_81">81</div><div id="line_82">82</div><div id="line_83">83</div><div id="line_84">84</div><div id="line_85">85</div><div id="line_86">86</div><div id="line_87">87</div><div id="line_88">88</div><div id="line_89">89</div><div id="line_90">90</div><div id="line_91">91</div><div id="line_92">92</div><div id="line_93">93</div><div id="line_94">94</div><div id="line_95">95</div><div id="line_96">96</div><div id="line_97">97</div><div id="line_98">98</div><div id="line_99">99</div><div id="line_100">100</div><div id="line_101">101</div><div id="line_102">102</div><div id="line_103">103</div><div id="line_104">104</div><div id="line_105">105</div><div id="line_106">106</div><div id="line_107">107</div><div id="line_108">108</div><div id="line_109">109</div><div id="line_110">110</div><div id="line_111">111</div><div id="line_112">112</div><div id="line_113">113</div><div id="line_114">114</div><div id="line_115">115</div><div id="line_116">116</div><div id="line_117">117</div><div id="line_118">118</div><div id="line_119">119</div><div id="line_120">120</div><div id="line_121">121</div><div id="line_122">122</div><div id="line_123">123</div><div id="line_124">124</div><div id="line_125">125</div></div>
+				<div id="content_highlight" style="visibility: visible; font-family: monospace; font-size: 10pt; line-height: 15px; width: 2139px; height: 390px;"><span class="apexpage"><span class="tags"><span class="vftags">&lt;apex:page</span></span> <span class="attributes">docType</span>=<span class="quotesmarks">"HTML"</span> <span class="attributes">standardController</span>=<span class="quotesmarks">"Account"</span>&gt;
+    <span class="tags">&lt;script</span> <span class="attributes">type</span>=<span class="quotesmarks">"text/javascript"</span> <span class="attributes">src</span>=<span class="quotesmarks">"https://na2.salesforce.com/canvas/sdk/js/37.0/controller.js"</span>&gt;<span class="tags">&lt;/script</span>&gt;
+    <span class="tags">&lt;script</span> <span class="attributes">type</span>=<span class="quotesmarks">"text/javascript"</span>&gt;
+
+        function subscribeVF() {
+            Sfdc.canvas.controller.subscribe({name : <span class="quotesmarks">'canvf.message'</span>, onData : function (data) {
+                    console.log(<span class="quotesmarks">'In subscribe func on VF Page '</span>+ data.value); 
+                    alert(<span class="quotesmarks">'Event Received in VF with value = '</span> + data.value);
+                }
+            });
+        }   
+    
+        function publishVF(message) {
+        
+            Sfdc.canvas.controller.publish({name : <span class="quotesmarks">'vfcan.message'</span>,
+                    payload : {<span class="quotesmarks">"value"</span> : message},
+                    target : {canvas : <span class="quotesmarks">'infinitescroll'</span>}
+            });
+
+        }
+
+    <span class="tags">&lt;/script</span>&gt;
+    <span class="tags">&lt;input</span> <span class="attributes">type</span>=<span class="quotesmarks">"button"</span> <span class="attributes">value</span>=<span class="quotesmarks">"Subscribe from Canvas"</span> <span class="attributes">onclick</span>=<span class="quotesmarks">"subscribeVF();"</span> /&gt;
+    <span class="tags">&lt;input</span> <span class="attributes">type</span>=<span class="quotesmarks">"button"</span> <span class="attributes">value</span>=<span class="quotesmarks">"Publish to Canvas"</span> <span class="attributes">onclick</span>=<span class="quotesmarks">"publishVF('This Message from VF');"</span> /&gt;    
+    <span class="tags"><span class="vftags">&lt;apex:canvasApp</span></span> <span class="attributes">applicationName</span>=<span class="quotesmarks">"Infinite Scroll"</span> <span class="attributes">canvasId</span>=<span class="quotesmarks">"infinitescroll"</span> <span class="attributes">maxHeight</span>=<span class="quotesmarks">"infinite"</span> <span class="attributes">height</span>=<span class="quotesmarks">"200px"</span> <span class="attributes">onCanvasAppLoad</span>=<span class="quotesmarks">"publishVF('This Message from VF')"</span>/&gt;
+<span class="tags"><span class="vftags">&lt;/apex:page</span></span>&gt;</span></div>
+				<div id="test_font_size" style="font-family: monospace; font-size: 10pt;"><pre><span id="test_font_size_inner">            alert</span></pre></div>
+				<textarea id="textarea" wrap="off" onchange="editArea.execCommand(&quot;onchange&quot;);" onfocus="javascript:editArea.textareaFocused=true;" onblur="javascript:editArea.textareaFocused=false;" classname="null hidden" class="null hidden" style="font-family: monospace; font-size: 10pt; line-height: 15px; margin-left: 0px; margin-top: 0px; white-space: pre; word-wrap: normal; width: 2139px; height: 390px;" spellcheck="false">				</textarea>
+				
+			</div>
+		</div>
+		<div class="area_toolbar" id="toolbar_2">
+			<table class="statusbar" cellspacing="0" cellpadding="0">
+				<tbody><tr>
+					<td class="total" selec="none">Position:</td>
+					<td class="infos" selec="none">
+						Ln <span id="linePos">14</span>, Ch <span id="currPos">18</span>
+					</td>
+					<td class="total" selec="none">Total:</td>
+					<td class="infos" selec="none">
+						Ln <span id="nbLine">26</span>, Ch <span id="nbChar">1206</span>
+					</td>
+					<td class="resize">
+						<span id="resize_area"><img src="./statusbar_resize.gif" alt="resize" selec="none"></span>
+					</td>
+				</tr>
+			</tbody></table>
+		</div>
+	</div>
+	<div id="processing" style="display: none; width: 2189px; height: 504px;">
+		<div id="processing_text">
+			Processing...
+		</div>
+	</div>
+
+	<div id="area_search_replace" class="editarea_popup">
+		<table cellspacing="2" cellpadding="0" style="width: 100%">
+			<tbody><tr>
+				<td selec="none">Search</td>
+				<td><input type="text" id="area_search"></td>
+				<td id="close_area_search_replace">
+					<a onclick="Javascript:editArea.execCommand(&quot;hidden_search&quot;)"><img selec="none" src="./close.gif" alt="close popup" title="close popup"></a><br>
+			</td></tr><tr>
+				<td selec="none">Replace</td>
+				<td><input type="text" id="area_replace"></td>
+				<td><img id="move_area_search_replace" onmousedown="return parent.start_move_element(event,&quot;area_search_replace&quot;, parent.frames[&quot;frame_&quot;+editArea.id]);" src="./move.gif" alt="move search popup" title="move search popup"></td>
+			</tr>
+		</tbody></table>
+		<div class="button">
+			<input type="checkbox" id="area_search_match_case"><label for="area_search_match_case" selec="none">Match Case</label>
+			<input type="checkbox" id="area_search_reg_exp"><label for="area_search_reg_exp" selec="none">Regular Expressions</label>
+			<br>
+			<a onclick="Javascript:editArea.execCommand(&quot;area_search&quot;)" selec="none">Find Next</a>
+			<a onclick="Javascript:editArea.execCommand(&quot;area_replace&quot;)" selec="none">Replace</a>
+			<a onclick="Javascript:editArea.execCommand(&quot;area_replace_all&quot;)" selec="none">Replace All</a><br>
+		</div>
+		<div id="area_search_msg" selec="none"></div>
+	</div>
+	<div id="edit_area_help" class="editarea_popup">
+		<div class="close_popup">
+			<a onclick="Javascript:editArea.execCommand(&quot;close_all_inline_popup&quot;)"><img src="./close.gif" alt="close popup" title="close popup"></a>
+		</div>
+		<div><h2>Editarea 0.7.2.2</h2><br>
+			<h3>Shortcuts:</h3>
+				Tab: add tabulation to text<br>
+				Shift+Tab: remove tabulation to text<br>
+				Ctrl+f: search next / open search area<br>
+				Ctrl+r: replace / open search area<br>
+				Ctrl+h: toggle syntax highlight on/off<br>
+				Ctrl+g: Go To Line<br>
+				Ctrl+z: Undo<br>
+				Ctrl+y: Redo<br>
+				Ctrl+e: about<br>
+				Ctrl+q, Esc: close popup<br>
+				Accesskey E: Toggle editor<br>
+			<br>
+			<em>Notice: syntax highlight function is only for small text</em>
+			<br><div class="copyright">© Christophe Dolivet - 2007</div>
+		</div>
+	</div>
+	
+
+
+</body></html>
