@@ -10,7 +10,7 @@ const util = require('util');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	res.render('index', { title: 'Return Request Demo });
+	res.render('index', { title: 'Return Request Demo' });
 });
 
 /* Creates a new the record */
