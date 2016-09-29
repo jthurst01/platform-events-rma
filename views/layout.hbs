@@ -19,7 +19,7 @@
 					'		</svg>' +
 					'	</div>' +
 					'	<div class="slds-media__body">' +
-					'		<h3 class="slds-truncate" title="Salesforce UX">Return Route Platform Event</h3>' +
+					'		<h3 class="slds-truncate" title="Salesforce UX">Return Status Platform Event</h3>' +
 					'		<div class="slds-tile__detail slds-text-body--small">' +
 					'			<dl class="slds-dl--horizontal">' +
 					'				<dt class="slds-dl--horizontal__label">' +
@@ -99,10 +99,11 @@
 					event.preventDefault();
 					console.log('In click');
 					var eventObj = {};
-					eventObj["customerId"] = $('#customerId').val();
-					eventObj["productName"] = $('#productName').val();
-					eventObj["numberOfUnits"] = $('#numberOfUnits').val();
-					eventObj["totalAmount"] = $('#totalAmount').val();
+					eventObj["accountId"] = $('#accountId').val();
+					eventObj["item"] = $('#item').val();
+					eventObj["serialNumber"] = $('#serialNumber').val();
+					eventObj["issueDate"] = $('#issueDate').val();
+					eventObj["issueDescription"] = $('#issueDescription').val();
 					console.log('eventObj: ' + JSON.stringify(eventObj));
 					$.post('/', eventObj, function(resp) {
 						console.log("post response: " + resp);

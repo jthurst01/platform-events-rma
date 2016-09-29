@@ -42,9 +42,9 @@
 							<div class="slds-grid">
 								<div class="slds-col--padded slds-size--1-of-1">
 									<div class="slds-form-element slds-is-required">
-										<label class="slds-form-element__label" for="customerId">Account Name</label>
+										<label class="slds-form-element__label" for="accountId">Account Name</label>
 										<div class="slds-form-element__control">
-											<select name="customerId" id="customerId" class="slds-select" required>
+											<select name="accountId" id="accountId" class="slds-select" required>
 												<option value="0100000002">DelBont Industries</option>
 												<option value="0100000004">Panorama Studios</option>
 												<option value="0100000005">TECUM</option>
@@ -54,25 +54,33 @@
 										</div>
 									</div>
 									<div class="slds-form-element slds-is-required">
-										<label class="slds-form-element__label" for="productName">Product Name</label>
+										<label class="slds-form-element__label" for="item">Item</label>
 										<div class="slds-form-element__control">
-											<select name="productName" id="productName" class="slds-select" required>
-												<option>Wonderful Widgets</option>
-												<option>Spectacular Sprockets</option>
-												<option>Terrific Thingamajigs</option>
+											<select name="item" id="item" class="slds-select" required>
+												<option>Mobile Device</option>
+												<option>Laptop</option>
+												<option>Desktop</option>
+												<option>Tablet</option>
+												<option>Monitor</option>
 											</select>
 										</div>
 									</div>
 									<div class="slds-form-element slds-is-required">
-										<label class="slds-form-element__label" for="numberOfUnits">Number of Units</label>
+										<label class="slds-form-element__label" for="serialNumber">Serial Number</label>
 										<div class="slds-form-element__control">
-											<input name="numberOfUnits" id="numberOfUnits" class="slds-input" type="number" required/>
+											<input name="serialNumber" id="serialNumber" class="slds-input" type="text" required/>
 										</div>
 									</div>
 									<div class="slds-form-element slds-is-required">
-										<label class="slds-form-element__label" for="totalAmount">Total Amount</label>
+										<label class="slds-form-element__label" for="issueDate">Issue Date</label>
 										<div class="slds-form-element__control">
-											<input name="totalAmount" id="totalAmount" class="slds-input" type="number" required/>
+											<input name="issueDate" id="issueDate" class="slds-input" type="date" required/>
+										</div>
+									</div>
+									<div class="slds-form-element slds-is-required">
+										<label class="slds-form-element__label" for="issueDescription">Issue Description</label>
+										<div class="slds-form-element__control">
+											<input name="issueDescription" id="issueDescription" class="slds-input" type="text" required/>
 										</div>
 									</div>
 								</div>
@@ -102,7 +110,7 @@
 								</div>
 								<div class="slds-media__body">
 									<p class="slds-text-heading--label">Platform Event Live Stream</p>
-									<h1 class="slds-text-heading--medium">Received Return Routes</h1>
+									<h1 class="slds-text-heading--medium">Received Return Statuses</h1>
 								</div>
 							</div>
 							<!-- / MEDIA OBJECT -->

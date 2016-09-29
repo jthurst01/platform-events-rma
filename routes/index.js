@@ -16,11 +16,12 @@ router.get('/', function(req, res, next) {
 /* Creates a new the record */
 router.post('/', function(req, res, next) {
 	console.log('In router post');
-	var newEvent = nforce.createSObject('Retrun_Request__e');
-	newEvent.set('CustomerId__c', req.body.customerId);
-	newEvent.set('Product_Name__c', req.body.productName);
-	newEvent.set('Number_of_Units__c', req.body.numberOfUnits);
-	newEvent.set('Total_Amount__c', req.body.totalAmount);  
+	var newEvent = nforce.createSObject('RMA_Request__e');
+	newEvent.set('AccountId__c', req.body.accountId);
+	newEvent.set('Item__c', req.body.item);
+	newEvent.set('Serial_Number__c', req.body.serialNumber);
+	newEvent.set('Issue_Date__c', req.body.issueDate);
+	newEvent.set('Issue_Description__c', req.body.issueDescription);  
 
 	org.org.insert({ sobject: newEvent })
   
