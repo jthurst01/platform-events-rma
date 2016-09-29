@@ -35,21 +35,41 @@
 					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
 					'					<p class="slds-truncate" title="' + results['payload']['RMA_Number__c'] + '">' + results['payload']['RMA_Number__c'] + '</p>' +
 					'				</dd>' +
-						
+					
 					'				<dt class="slds-dl--horizontal__label">' +
-					'					<p class="slds-truncate" title="Item Name">Item Name:</p>' +
+					'					<p class="slds-truncate" title="Return Request Created Date">Return Request Created Date:</p>' +
 					'				</dt>' +
 					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Item_Name__c'] + '">' + results['payload']['Item_Name__c'] + '</p>' +
+					'					<p class="slds-truncate" title="' + results['payload']['Return_Request_Created_Date__c'] + '">' + results['payload']['Return_Request_Created_Date__c'] + '</p>' +
 					'				</dd>' +
 						
+					'				<dt class="slds-dl--horizontal__label">' +
+					'					<p class="slds-truncate" title="Asset Name">Asset Name:</p>' +
+					'				</dt>' +
+					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
+					'					<p class="slds-truncate" title="' + results['payload']['Asset_Name__c'] + '">' + results['payload']['Asset_Name__c'] + '</p>' +
+					'				</dd>' +
+						
+					'				<dt class="slds-dl--horizontal__label">' +
+					'					<p class="slds-truncate" title="Serial Number">Serial Number:</p>' +
+					'				</dt>' +
+					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
+					'					<p class="slds-truncate" title="' + results['payload']['Serial_Number__c'] + '">' + results['payload']['Serial_Number__c'] + '</p>' +
+					'				</dd>' +
+					
+					'				<dt class="slds-dl--horizontal__label">' +
+					'					<p class="slds-truncate" title="Asset Install Date">Asset Install Date:</p>' +
+					'				</dt>' +
+					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
+					'					<p class="slds-truncate" title="' + results['payload']['Asset_Install_Date__c'] + '">' + results['payload']['Asset_Install_Date__c'] + '</p>' +
+					'				</dd>' +
+					
 					'				<dt class="slds-dl--horizontal__label">' +
 					'					<p class="slds-truncate" title="Return Status">Return Status:</p>' +
 					'				</dt>' +
 					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
 					'					<p class="slds-truncate" title="' + results['payload']['Return_Status__c'] + '">' + results['payload']['Return_Status__c'] + '</p>' +
-					'				</dd>' +
-						
+					'				</dd>' 
 						
 					'				<dt class="slds-dl--horizontal__label">' +
 					'					<p class="slds-truncate" title="Return Shipment Location">Return Shipment Location:</p>' +
@@ -57,6 +77,7 @@
 					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
 					'					<p class="slds-truncate" title="' + results['payload']['Return_Shipment_Location__c'] + '">' + results['payload']['Return_Shipment_Location__c'] + '</p>' +
 					'				</dd>' +
+					
 					'				<dt class="slds-dl--horizontal__label">' +
 					'					<p class="slds-truncate" title="Last Update Time">Last Updated Time:</p>' +
 					'				</dt>' +
