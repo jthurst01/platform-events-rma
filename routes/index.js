@@ -22,9 +22,7 @@ router.post('/', function(req, res, next) {
 	newEvent.set('Serial_Number__c', req.body.serialNumber);
 	newEvent.set('Issue_Date__c', req.body.issueDate);
 	newEvent.set('Issue_Description__c', req.body.issueDescription);  
-	console.log('newEvent: ' + newEvent.toString());
 	org.org.insert({ sobject: newEvent })
-  	console.log('After Insert');
 });
 
 module.exports = router;
