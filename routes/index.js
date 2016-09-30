@@ -23,6 +23,7 @@ router.post('/', function(req, res) {
 	newEvent.set('Issue_Date__c', req.body.issueDate);
 	newEvent.set('Issue_Description__c', req.body.issueDescription);  
 	org.org.insert({ sobject: newEvent })
+	res.sendStatus(200);
 });
 
 module.exports = router;
