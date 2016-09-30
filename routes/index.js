@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* Creates a new the record */
-router.post('/', function(req, res, next) {
+router.post('/', function(req, res) {
 	console.log('In router post');
 	var newEvent = nforce.createSObject('RMA_Request__e');
 	newEvent.set('AccountId__c', req.body.accountId);
