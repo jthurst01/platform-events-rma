@@ -12,6 +12,9 @@
 				var results = JSON.parse(data);
 				console.log(results);							  
 
+var date = new Date(results['payload']['Asset_Install_Date__c']);
+var datetime = new Date(results['payload']['Return_Request_Created_Date__c']);
+
 				var newPlatformEvent = '<div class="slds-tile slds-media slds-box">' +
 					'	<div class="slds-media__figure">' +
 					'		<svg aria-hidden="true" class="slds-icon slds-icon--standard slds-icon-custom-96">' +
@@ -40,7 +43,7 @@
 					'					<p class="slds-truncate" title="Return Request Created Date">Return Request Created Date:</p>' +
 					'				</dt>' +
 					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Return_Request_Created_Date__c'] + '">' + results['payload']['Return_Request_Created_Date__c'] + '</p>' +
+					'					<p class="slds-truncate" title="' + results['payload']['Return_Request_Created_Date__c'] + '">' + dateTime + '</p>' +
 					'				</dd>' +
 						
 					'				<dt class="slds-dl--horizontal__label">' +
@@ -61,7 +64,7 @@
 					'					<p class="slds-truncate" title="Asset Install Date">Asset Install Date:</p>' +
 					'				</dt>' +
 					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Asset_Install_Date__c'] + '">' + results['payload']['Asset_Install_Date__c'] + '</p>' +
+					'					<p class="slds-truncate" title="' + results['payload']['Asset_Install_Date__c'] + '">' + date + '</p>' +
 					'				</dd>' +
 					
 					'				<dt class="slds-dl--horizontal__label">' +
