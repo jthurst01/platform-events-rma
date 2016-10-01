@@ -17,7 +17,7 @@
 				var assetInstallDate = new Date(results['payload']['Asset_Install_Date__c']);
 				var lastUpdatedTime = new Date(results['payload']['Last_Updated_Time__c']);
 
-				var newPlatformEvent = '<div class="slds-tile slds-media slds-box">' +
+				var newPlatformEvent = '<div class="slds-tile slds-media slds-media--cente slds-box">' +
 					'	<div class="slds-media__figure">' +
 					'		<svg aria-hidden="true" class="slds-icon slds-icon--standard slds-icon-custom-96">' +
 					'			<use xlink:href="/assets/icons/custom-sprite/svg/symbols.svg#custom96"></use>' +
@@ -25,7 +25,8 @@
 					'	</div>' +
 					'	<div class="slds-media__body">' +
 					'		<h3 class="slds-truncate" title="Return Status Platform Event">Return Status Platform Event</h3>' +
-					'		<div class="slds-tile__detail slds-text-body--small">' +
+					'</div>' +
+					'		<div class="slds-tile__detail slds-text-body--small slds-p-top--medium">' +
 					'			<dl class="slds-dl--horizontal">' +
 					'				<dt class="slds-dl--horizontal__label">' +
 					'					<p class="slds-truncate" title="Replay Id">Replay Id:</p>' +
@@ -99,7 +100,7 @@
 					
 					'			</dl>' +
 					'		</div>' +
-					'	</div>' +
+					
 					'</div>';
 				$(newPlatformEvent).prependTo('#messages').hide().slideDown();
 					  

@@ -4720,7 +4720,7 @@ a.slds-button--inverse:focus {
     border-bottom: 1px solid #d8dde6; 
     box-sizing: content-box}
   .slds-dl--horizontal__detail {
-    margin-left: calc(33% + 0.75rem); 
+    margin-left: calc(33%); 
     padding: 0.2rem;
     border-bottom: 1px solid #d8dde6; 
     box-sizing: content-box} 
