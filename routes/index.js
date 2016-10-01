@@ -18,7 +18,7 @@ router.post('/', function(req, res) {
 	console.log('In router post');
 	var newEvent = nforce.createSObject('RMA_Request__e');
 	newEvent.set('AccountId__c', req.body.accountId);
-	newEvent.set('Item__c', req.body.item);
+	newEvent.set('Asset_Type__c', req.body.item);
 	newEvent.set('Serial_Number__c', req.body.serialNumber);
 	newEvent.set('Issue_Date__c', req.body.issueDate);
 	newEvent.set('Issue_Description__c', req.body.issueDescription);  
