@@ -4715,15 +4715,13 @@ a.slds-button--inverse:focus {
   .slds-dl--horizontal__label {
     width: 33%;
     float: left;
-    clear: left; }
+    clear: left; 
+    padding: 0.5rem;
+    border-bottom: 1px solid #d8dde6; }
   .slds-dl--horizontal__detail {
-    margin-left: calc(33% + 0.75rem); } 
-  .slds-dl--horizontal.slds-has-dividers > .slds-dl--horizontal__label {
+    margin-left: calc(33% + 0.75rem); 
     padding: 0.5rem;
-    border-bottom: 1px solid #d8dde6; }}
-  .slds-dl--horizontal.slds-has-dividers > .slds-dl--horizontal__detail {
-    padding: 0.5rem;
-    border-bottom: 1px solid #d8dde6; }}
+    border-bottom: 1px solid #d8dde6; } 
 .slds-list--horizontal {
   display: -webkit-box;
   display: -webkit-flex;
