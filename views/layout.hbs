@@ -5,15 +5,17 @@
 		<link rel="stylesheet" href="/assets/stylesheets/style.css" />
 		<link rel="stylesheet" href="/assets/styles/salesforce-lightning-design-system.css" />
 		<script src="/assets/scripts/jquery.min.js"></script>
+		<script src="/assets/scripts/dateFormat.js"></script>
 		<script src="/socket.io/socket.io.js"></script>
 		<script type="text/javascript">			
 			var socket = io();
 			socket.on('event-processed', function (data) {
 				var results = JSON.parse(data);
-				console.log(results);							  
-
-var date = new Date(results['payload']['Asset_Install_Date__c']);
-var dateTime = new Date(results['payload']['Return_Request_Created_Date__c']);
+				console.log(results);		
+				
+				var returnRequestCreatedDate = new Date(results['payload']['Return_Request_Created_Date__c']);
+				var assetInstallDate = new Date(results['payload']['Asset_Install_Date__c']);
+				var lastUpdatedTime = new Date(results['payload']['Last_Updated_Time__c']);
 
 				var newPlatformEvent = '<div class="slds-tile slds-media slds-box">' +
 					'	<div class="slds-media__figure">' +
@@ -43,7 +45,7 @@ var dateTime = new Date(results['payload']['Return_Request_Created_Date__c']);
 					'					<p class="slds-truncate" title="Return Request Created Date">Return Request Created Date:</p>' +
 					'				</dt>' +
 					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Return_Request_Created_Date__c'] + '">' + dateTime + '</p>' +
+					'					<p class="slds-truncate" title="' + results['payload']['Return_Request_Created_Date__c'] + '">' + dateFormat(returnRequestCreatedDate, "m/d/yyyy h:MM:ss TT") + '</p>' +
 					'				</dd>' +
 						
 					'				<dt class="slds-dl--horizontal__label">' +
@@ -64,7 +66,7 @@ var dateTime = new Date(results['payload']['Return_Request_Created_Date__c']);
 					'					<p class="slds-truncate" title="Asset Install Date">Asset Install Date:</p>' +
 					'				</dt>' +
 					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Asset_Install_Date__c'] + '">' + date + '</p>' +
+					'					<p class="slds-truncate" title="' + results['payload']['Asset_Install_Date__c'] + '">' + dateFormat(assetInstallDate, "m/d/yyyy h:MM:ss TT") + '</p>' +
 					'				</dd>' +
 					
 					'				<dt class="slds-dl--horizontal__label">' +
@@ -85,7 +87,7 @@ var dateTime = new Date(results['payload']['Return_Request_Created_Date__c']);
 					'					<p class="slds-truncate" title="Last Update Time">Last Updated Time:</p>' +
 					'				</dt>' +
 					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Last_Updated_Time__c'] + '">' + results['payload']['Last_Updated_Time__c'] + '</p>' +
+					'					<p class="slds-truncate" title="' + results['payload']['Last_Updated_Time__c'] + '">' + dateFormat(lastUpdatedTime, "m/d/yyyy h:MM:ss TT") + '</p>' +
 					'				</dd>' +
 							
 					'				<dt class="slds-dl--horizontal__label">' +
