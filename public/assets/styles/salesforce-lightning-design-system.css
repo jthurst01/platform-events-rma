@@ -4718,7 +4718,10 @@ a.slds-button--inverse:focus {
     clear: left; }
   .slds-dl--horizontal__detail {
     margin-left: calc(33% + 0.75rem); } 
-  .slds-dl--horizontal.slds-has-dividers {
+  .slds-dl--horizontal.slds-has-dividers > .slds-dl--horizontal__label {
+    padding: 0.5rem;
+    border-bottom: 1px solid #d8dde6; }}
+  .slds-dl--horizontal.slds-has-dividers > .slds-dl--horizontal__detail {
     padding: 0.5rem;
     border-bottom: 1px solid #d8dde6; }}
 .slds-list--horizontal {
