@@ -24,82 +24,82 @@
 					'		</svg>' +
 					'	</div>' +
 					'	<div class="slds-media__body">' +
-					'		<h3 class="slds-truncate" title="Return Status Platform Event">Return Status Platform Event</h3>' +
-					'</div>' +
-					'		<div class="slds-tile__detail slds-text-body--small slds-p-top--medium">' +
-					'			<dl class="slds-dl--horizontal">' +
-					'				<dt class="slds-dl--horizontal__label">' +
-					'					<p class="slds-truncate" title="Replay Id">Replay Id:</p>' +
-					'				</dt>' +
-					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['event']['replayId'] + '">' + results['event']['replayId'] + '</p>' +
-					'				</dd>' +
+					'		<h3 class="slds-truncate slds-text-heading--small" title="Return Status Platform Event">Return Status Platform Event</h3>' +
+					'	</div>' +
+				'		<div class="slds-tile__detail slds-text-body--small slds-p-top--medium">' +
+				'			<dl class="slds-dl--horizontal">' +
+				'				<dt class="slds-dl--horizontal__label">' +
+				'					<p class="slds-truncate" title="Replay Id">Replay Id:</p>' +
+				'				</dt>' +
+				'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
+				'					<p class="slds-truncate" title="' + results['event']['replayId'] + '">' + results['event']['replayId'] + '</p>' +
+				'				</dd>' +
+					
+				'				<dt class="slds-dl--horizontal__label">' +
+				'					<p class="slds-truncate" title="RMA Number">RMA Number:</p>' +
+				'				</dt>' +
+				'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
+				'					<p class="slds-truncate" title="' + results['payload']['RMA_Number__c'] + '">' + results['payload']['RMA_Number__c'] + '</p>' +
+				'				</dd>' +
+				
+				'				<dt class="slds-dl--horizontal__label">' +
+				'					<p class="slds-truncate" title="Asset Name">Asset Name:</p>' +
+				'				</dt>' +
+				'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
+				'					<p class="slds-truncate" title="' + results['payload']['Asset_Name__c'] + '">' + results['payload']['Asset_Name__c'] + '</p>' +
+				'				</dd>' +
+					
+				'				<dt class="slds-dl--horizontal__label">' +
+				'					<p class="slds-truncate" title="Serial Number">Serial Number:</p>' +
+				'				</dt>' +
+				'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
+				'					<p class="slds-truncate" title="' + results['payload']['Serial_Number__c'] + '">' + results['payload']['Serial_Number__c'] + '</p>' +
+				'				</dd>' +
+				
+				'				<dt class="slds-dl--horizontal__label">' +
+				'					<p class="slds-truncate" title="Return Status">Return Status:</p>' +
+				'				</dt>' +
+				'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
+				'					<p class="slds-truncate" title="' + results['payload']['Return_Status__c'] + '">' + results['payload']['Return_Status__c'] + '</p>' +
+				'				</dd>'  +
+					
+				'				<dt class="slds-dl--horizontal__label">' +
+				'					<p class="slds-truncate" title="Return Shipment Location">Return Shipment Location:</p>' +
+				'				</dt>' +
+				'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
+				'					<p class="slds-truncate" title="' + results['payload']['Return_Shipment_Location__c'] + '">' + results['payload']['Return_Shipment_Location__c'] + '</p>' +
+				'				</dd>' +
 						
-					'				<dt class="slds-dl--horizontal__label">' +
-					'					<p class="slds-truncate" title="RMA Number">RMA Number:</p>' +
-					'				</dt>' +
-					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['RMA_Number__c'] + '">' + results['payload']['RMA_Number__c'] + '</p>' +
-					'				</dd>' +
+				'				<dt class="slds-dl--horizontal__label">' +
+				'					<p class="slds-truncate" title="Return Notes">Return Notes:</p>' +
+				'				</dt>' +
+				'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
+				'					<p class="slds-truncate" title="' + results['payload']['Return_Notes__c'] + '">' + results['payload']['Return_Notes__c'] + '</p>' +
+				'				</dd>' +
+				
+				'				<dt class="slds-dl--horizontal__label">' +
+				'					<p class="slds-truncate" title="Asset Install Date">Asset Install Date:</p>' +
+				'				</dt>' +
+				'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
+				'					<p class="slds-truncate" title="' + results['payload']['Asset_Install_Date__c'] + '">' + dateFormat(assetInstallDate, "m/d/yyyy h:MM:ss TT") + '</p>' +
+				'				</dd>' +
+				
+				'				<dt class="slds-dl--horizontal__label">' +
+				'					<p class="slds-truncate" title="Return Request Created Date">Return Request Created Date:</p>' +
+				'				</dt>' +
+				'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
+				'					<p class="slds-truncate" title="' + results['payload']['Return_Request_Created_Date__c'] + '">' + dateFormat(returnRequestCreatedDate, "m/d/yyyy h:MM:ss TT") + '</p>' +
+				'				</dd>' +
 					
-					'				<dt class="slds-dl--horizontal__label">' +
-					'					<p class="slds-truncate" title="Asset Name">Asset Name:</p>' +
-					'				</dt>' +
-					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Asset_Name__c'] + '">' + results['payload']['Asset_Name__c'] + '</p>' +
-					'				</dd>' +
-						
-					'				<dt class="slds-dl--horizontal__label">' +
-					'					<p class="slds-truncate" title="Serial Number">Serial Number:</p>' +
-					'				</dt>' +
-					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Serial_Number__c'] + '">' + results['payload']['Serial_Number__c'] + '</p>' +
-					'				</dd>' +
-					
-					'				<dt class="slds-dl--horizontal__label">' +
-					'					<p class="slds-truncate" title="Return Status">Return Status:</p>' +
-					'				</dt>' +
-					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Return_Status__c'] + '">' + results['payload']['Return_Status__c'] + '</p>' +
-					'				</dd>'  +
-						
-					'				<dt class="slds-dl--horizontal__label">' +
-					'					<p class="slds-truncate" title="Return Shipment Location">Return Shipment Location:</p>' +
-					'				</dt>' +
-					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Return_Shipment_Location__c'] + '">' + results['payload']['Return_Shipment_Location__c'] + '</p>' +
-					'				</dd>' +
-							
-					'				<dt class="slds-dl--horizontal__label">' +
-					'					<p class="slds-truncate" title="Return Notes">Return Notes:</p>' +
-					'				</dt>' +
-					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Return_Notes__c'] + '">' + results['payload']['Return_Notes__c'] + '</p>' +
-					'				</dd>' +
-					
-					'				<dt class="slds-dl--horizontal__label">' +
-					'					<p class="slds-truncate" title="Asset Install Date">Asset Install Date:</p>' +
-					'				</dt>' +
-					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Asset_Install_Date__c'] + '">' + dateFormat(assetInstallDate, "m/d/yyyy h:MM:ss TT") + '</p>' +
-					'				</dd>' +
-					
-					'				<dt class="slds-dl--horizontal__label">' +
-					'					<p class="slds-truncate" title="Return Request Created Date">Return Request Created Date:</p>' +
-					'				</dt>' +
-					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Return_Request_Created_Date__c'] + '">' + dateFormat(returnRequestCreatedDate, "m/d/yyyy h:MM:ss TT") + '</p>' +
-					'				</dd>' +
-						
-					'				<dt class="slds-dl--horizontal__label">' +
-					'					<p class="slds-truncate" title="Last Update Time">Last Updated Time:</p>' +
-					'				</dt>' +
-					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Last_Updated_Time__c'] + '">' + dateFormat(lastUpdatedTime, "m/d/yyyy h:MM:ss TT") + '</p>' +
-					'				</dd>' +
-					
-					'			</dl>' +
-					'		</div>' +
+				'				<dt class="slds-dl--horizontal__label">' +
+				'					<p class="slds-truncate" title="Last Update Time">Last Updated Time:</p>' +
+				'				</dt>' +
+				'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
+				'					<p class="slds-truncate" title="' + results['payload']['Last_Updated_Time__c'] + '">' + dateFormat(lastUpdatedTime, "m/d/yyyy h:MM:ss TT") + '</p>' +
+				'				</dd>' +
+				
+				'			</dl>' +
+				'		</div>' +
 					
 					'</div>';
 				$(newPlatformEvent).prependTo('#messages').hide().slideDown();
