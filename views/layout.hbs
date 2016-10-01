@@ -101,7 +101,6 @@
 					'		</div>' +
 					'	</div>' +
 					'</div>';
-				console.log(newPlatformEvent);
 				$(newPlatformEvent).prependTo('#messages').hide().slideDown();
 					  
 			})
@@ -109,7 +108,7 @@
 			$(document).ready(function() {
 			
 				var defaultDate = new Date();
-				$("#issueDate").val(dateFormat(defaultDate, "m/d/yyyy"));
+				$("#issueDate").val(dateFormat(defaultDate, "yyyy-mm-dd"));
 				
 				$("#createBtn").click(function(event) {
 					event.preventDefault();
