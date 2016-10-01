@@ -1,123 +1,119 @@
-<body>
-	<div id='platform-events-node' class='slds-grid slds-wrap slds-grid--pull-padded'>
-		<!-- MASTHEAD -->
-		<h3 class="slds-size--1-of-1 slds-text-heading--medium slds-text-align--center slds-theme--shade slds-m-around--small">Return Request Demo</h3>
-		<!-- / MASTHEAD -->
-		<div class="slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-small-order--2 slds-medium-order--1 slds-large-order--1">
-			<!-- PAGE HEADER -->
-			<div class="slds-page-header" role="banner">
-				<!-- LAYOUT GRID -->
-				<div class="slds-grid">
-					<!-- GRID COL -->
-					<div class="slds-col">
-						<!-- HEADING AREA -->
-						<!-- MEDIA OBJECT = FIGURE + BODY -->
-						<div class="slds-media">
-							<div class="slds-media__figure">
-								<svg aria-hidden="true" class="slds-icon slds-icon--large slds-icon-custom-80">
-									<use xlink:href="/assets/icons/custom-sprite/svg/symbols.svg#custom80"></use>
-								</svg>
-							</div>
-							<div class="slds-media__body">
-								<p class="slds-text-heading--label">Return Request</p>
-								<h1 class="slds-text-heading--medium">New Return Request</h1>
-							</div>
+<div id='platform-events-node' class='slds-grid slds-wrap slds-grid--pull-padded'>
+	<!-- MASTHEAD -->
+	<h3 class="slds-size--1-of-1 slds-text-heading--medium slds-text-align--center slds-theme--shade slds-m-around--small">Return Request Demo</h3>
+	<!-- / MASTHEAD -->
+	<div class="slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-small-order--2 slds-medium-order--2 slds-large-order--1">
+		<!-- PAGE HEADER -->
+		<div class="slds-page-header" role="banner">
+			<!-- LAYOUT GRID -->
+			<div class="slds-grid">
+				<!-- GRID COL -->
+				<div class="slds-col">
+					<!-- HEADING AREA -->
+					<!-- MEDIA OBJECT = FIGURE + BODY -->
+					<div class="slds-media">
+						<div class="slds-media__figure">
+							<svg aria-hidden="true" class="slds-icon slds-icon--large slds-icon-custom-80">
+								<use xlink:href="/assets/icons/custom-sprite/svg/symbols.svg#custom80"></use>
+							</svg>
 						</div>
-						<!-- / MEDIA OBJECT -->
-						<!-- HEADING AREA -->
+						<div class="slds-media__body">
+							<p class="slds-text-heading--label">Return Request</p>
+							<h1 class="slds-text-heading--medium">New Return Request</h1>
+						</div>
 					</div>
+					<!-- / MEDIA OBJECT -->
+					<!-- HEADING AREA -->
 				</div>
-				<!-- / LAYOUT GRID -->
 			</div>
-			<!-- / PAGE HEADER -->
-			<!-- PRIMARY CONTENT WRAPPER -->
-			<div class="myapp">
-				<!-- CREATE NEW CUSTOMER ORDER EVENT -->
-				<div aria-labelledby="newpieform">
-					<!-- BOXED AREA -->
-					<fieldset class="slds-box slds-theme--default">
-						<!-- CREATE NEW CUSTOMER ORDER EVENT FORM>
-						<form action="/" method="post" class="slds-form--stacked" -->
-						<form class="slds-form--stacked">
-							<div class="slds-grid">
-								<div class="slds-col--padded slds-size--1-of-1">
-									<div class="slds-form-element slds-is-required">
-										<label class="slds-form-element__label" for="accountId">Account Name</label>
-										<div class="slds-form-element__control">
-											<select name="accountId" id="accountId" class="slds-select" required>
-												<option value="0100000002">DelBont Industries</option>
-												<option value="0100000004">Panorama Studios</option>
-												<option value="0100000005">TECUM</option>
-												<option value="0100000006">Asia High Tech</option>
-												<option value="0100000008">AVANTEL</option>
-											</select>
-										</div>
-									</div>
-									<div class="slds-form-element slds-is-required">
-										<label class="slds-form-element__label" for="item">Item</label>
-										<div class="slds-form-element__control">
-											<select name="item" id="item" class="slds-select" required>
-												<option>Mobile Device</option>
-												<option>Laptop</option>
-												<option>Desktop</option>
-												<option>Tablet</option>
-												<option>Monitor</option>
-											</select>
-										</div>
-									</div>
-									<div class="slds-form-element slds-is-required">
-										<label class="slds-form-element__label" for="serialNumber">Serial Number</label>
-										<div class="slds-form-element__control">
-											<input name="serialNumber" id="serialNumber" class="slds-input" type="text" required/>
-										</div>
-									</div>
-									<div class="slds-form-element slds-is-required">
-										<label class="slds-form-element__label" for="issueDate">Issue Date</label>
-										<div class="slds-form-element__control">
-											<input name="issueDate" id="issueDate" class="slds-input" type="date" required/>
-										</div>
-									</div>
-									<div class="slds-form-element slds-is-required">
-										<label class="slds-form-element__label" for="issueDescription">Issue Description</label>
-										<div class="slds-form-element__control">
-											<input name="issueDescription" id="issueDescription" class="slds-input" type="text" required/>
-										</div>
-									</div>
-								</div>
-							</div>
-							<button class="slds-button slds-button--brand slds-m-top--medium" id="createBtn" type="submit">Create Return Request</button>
-						</form>
-						<!-- CREATE NEW CUSTOMER ORDER EVENT FORM -->
-					</fieldset>
-					<!-- / BOXED AREA -->
-				</div>
-				<!-- / CREATE NEW CUSTOMER ORDER EVENT -->
-			</div>
-			<!-- / PRIMARY CONTENT WRAPPER -->
+			<!-- / LAYOUT GRID -->
 		</div>
-		<div class="slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-small-order--1 slds-medium-order--2 slds-large-order--2">
-				<div class="slds-text-heading--medium slds-page-header">
+		<!-- / PAGE HEADER -->
+		<!-- PRIMARY CONTENT WRAPPER -->
+		<div class="myapp">
+			<!-- CREATE NEW CUSTOMER ORDER EVENT -->
+			<div aria-labelledby="newpieform">
+				<!-- BOXED AREA -->
+				<fieldset class="slds-box slds-theme--default">
+					<!-- CREATE NEW CUSTOMER ORDER EVENT BOX -->
 					<div class="slds-grid">
-						<!-- GRID COL -->
-						<div class="slds-col">
-							<!-- MEDIA OBJECT = FIGURE + BODY -->
-							<div class="slds-media">
-								<div class="slds-media__figure">
-									<svg aria-hidden="true" class="slds-icon slds-icon--large slds-icon-custom-96">
-										<use xlink:href="/assets/icons/custom-sprite/svg/symbols.svg#custom96"></use>
-									</svg>
-								</div>
-								<div class="slds-media__body">
-									<p class="slds-text-heading--label">Platform Event Live Stream</p>
-									<h1 class="slds-text-heading--medium">Received Return Statuses</h1>
+						<div class="slds-col--padded slds-size--1-of-1">
+							<div class="slds-form-element slds-is-required">
+								<label class="slds-form-element__label" for="accountId">Account Name</label>
+								<div class="slds-form-element__control">
+									<select name="accountId" id="accountId" class="slds-select" required>
+										<option value="0100000002">DelBont Industries</option>
+										<option value="0100000004">Panorama Studios</option>
+										<option value="0100000005">TECUM</option>
+										<option value="0100000006">Asia High Tech</option>
+										<option value="0100000008">AVANTEL</option>
+									</select>
 								</div>
 							</div>
-							<!-- / MEDIA OBJECT -->
+							<div class="slds-form-element slds-is-required">
+								<label class="slds-form-element__label" for="item">Item</label>
+								<div class="slds-form-element__control">
+									<select name="item" id="item" class="slds-select" required>
+										<option>Mobile Device</option>
+										<option>Laptop</option>
+										<option>Desktop</option>
+										<option>Tablet</option>
+										<option>Monitor</option>
+									</select>
+								</div>
+							</div>
+							<div class="slds-form-element slds-is-required">
+								<label class="slds-form-element__label" for="serialNumber">Serial Number</label>
+								<div class="slds-form-element__control">
+									<input name="serialNumber" id="serialNumber" class="slds-input" type="text" required/>
+								</div>
+							</div>
+							<div class="slds-form-element slds-is-required">
+								<label class="slds-form-element__label" for="issueDate">Issue Date</label>
+								<div class="slds-form-element__control">
+									<input name="issueDate" id="issueDate" class="slds-input" type="date" required/>
+								</div>
+							</div>
+							<div class="slds-form-element slds-is-required">
+								<label class="slds-form-element__label" for="issueDescription">Issue Description</label>
+								<div class="slds-form-element__control">
+									<input name="issueDescription" id="issueDescription" class="slds-input" type="text" required/>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div> 
-				<div id="messages"></div> 
+					<button class="slds-button slds-button--brand slds-m-top--medium" id="createBtn" type="submit">Create Return Request</button>
+					<!-- CREATE NEW CUSTOMER ORDER EVENT FORM -->
+				</fieldset>
+				<!-- / BOXED AREA -->
+			</div>
+			<!-- / CREATE NEW CUSTOMER ORDER EVENT -->
 		</div>
+		<!-- / PRIMARY CONTENT WRAPPER -->
 	</div>
+	<div class="slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-small-order--1 slds-medium-order--1 slds-large-order--2">
+		<div class="slds-text-heading--medium slds-page-header">
+			<div class="slds-grid">
+				<!-- GRID COL -->
+				<div class="slds-col">
+					<!-- MEDIA OBJECT = FIGURE + BODY -->
+					<div class="slds-media">
+						<div class="slds-media__figure">
+							<svg aria-hidden="true" class="slds-icon slds-icon--large slds-icon-custom-96">
+								<use xlink:href="/assets/icons/custom-sprite/svg/symbols.svg#custom96"></use>
+							</svg>
+						</div>
+						<div class="slds-media__body">
+							<p class="slds-text-heading--label">Platform Event Live Stream</p>
+							<h1 class="slds-text-heading--medium">Received Return Statuses</h1>
+						</div>
+					</div>
+					<!-- / MEDIA OBJECT -->
+				</div>
+			</div>
+		</div> 
+		<div id="messages"></div> 
+	</div>
+</div>
 
 
