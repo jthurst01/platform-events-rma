@@ -4711,7 +4711,7 @@ a.slds-button--inverse:focus {
   .slds-dl--inline__detail {
     float: left;
     padding-left: 0.25rem; } }
-@media (min-width: 48em) {
+@media (min-width: 24em) {
   .slds-dl--horizontal__label {
     width: 33%;
     float: left;
