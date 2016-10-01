@@ -4716,12 +4716,14 @@ a.slds-button--inverse:focus {
     width: 33%;
     float: left;
     clear: left; 
-    padding: 0.5rem;
-    border-bottom: 1px solid #d8dde6; }
+    padding: 0.2rem;
+    border-bottom: 1px solid #d8dde6; 
+    box-sizing: content-box}
   .slds-dl--horizontal__detail {
     margin-left: calc(33% + 0.75rem); 
-    padding: 0.5rem;
-    border-bottom: 1px solid #d8dde6; } 
+    padding: 0.2rem;
+    border-bottom: 1px solid #d8dde6; 
+    box-sizing: content-box} 
 .slds-list--horizontal {
   display: -webkit-box;
   display: -webkit-flex;
