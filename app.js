@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var config = require('./config.js');
 var nforce = require('nforce');
+var util = require('util');
+
 
 var routes = require('./routes/index');
 
@@ -31,23 +33,24 @@ org.authenticate({ username: config.USERNAME, password: config.PASSWORD }, funct
     // add any logic to perform after login
   }
 
-  var cj = org.createStreamClient();
-  var str = cj.subscribe({ topic: config.TOPIC, isPlatformEvent: true, oauth: oauth });
-
-  str.on('connect', function(){
-    console.log('Connected to topic: ' + config.TOPIC);
-  });
-
-  str.on('error', function(error) {
-    console.log('Error received from topic: ' + error);
-  });
-
-  str.on('data', function(data) {
-    console.log('Received the following from topic ---');
-    console.log(data);
-    // emit the record to be displayed on the page
-    socket.emit('event-processed', JSON.stringify(data));
-  });
+//   var cj = org.createStreamClient({ topic: config.TOPIC, replayId: config.REPLAY_ID });
+//   var str = cj.subscribe({ topic: config.TOPIC, oauth: oauth });
+//   //console.log(util.inspect(cj, false, null));
+// 
+//   str.on('connect', function(){
+//     console.log('Connected to topic: ' + config.TOPIC);
+//   });
+// 
+//   str.on('error', function(error) {
+//     console.log('Error received from topic: ' + error);
+//   });
+// 
+//   str.on('data', function(data) {
+//     //console.log('Received the following from topic ---');
+//     //console.log(data);
+//     // emit the record to be displayed on the page
+//     socket.emit('event-processed', JSON.stringify(data));
+//   });
 
 });
 
@@ -102,5 +105,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-module.exports = {app: app, server: server, org: org};
+module.exports = {app: app, server: server, org: org, config: config};
 exports.org = org;
+exports.config = config;
+exports.socket = socket;

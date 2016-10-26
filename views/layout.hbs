@@ -113,6 +113,13 @@
 						console.log("post response: " + resp);
 					});
 				});
+				
+				$("#subscribeBtn").click(function(event) {
+					event.preventDefault();
+					$.post('/newSub', function(resp) {
+						console.log("post response: " + resp);
+					});
+				});
 			});
 			
 		</script>
