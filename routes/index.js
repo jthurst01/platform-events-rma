@@ -13,6 +13,11 @@ router.get('/', function(req, res, next) {
 	res.render('index', { title: 'Return Request Demo' });
 });
 
+/* GET home page. */
+router.get('/cdc', function(req, res, next) {
+	res.render('cdc', { title: 'Change Data Events Demo' });
+});
+
 /* Creates a new the record */
 router.post('/', function(req, res) {
 	console.log('In router post');
@@ -33,6 +38,28 @@ router.post('/newSub', function(req, res) {
 
 	str.on('connect', function(){
 		console.log('Connected to topic: ' + app.config.TOPIC);
+	});
+
+	str.on('error', function(error) {
+		console.log('Error received from topic: ' + error);
+	});
+
+	str.on('data', function(data) {
+		console.log('Received the following from topic ---');
+		console.log(data);
+		// emit the record to be displayed on the page
+		app.socket.emit('event-processed', JSON.stringify(data));
+	});
+	res.sendStatus(200);
+});
+
+router.post('/newCDCSub', function(req, res) {
+	var cj = app.org.createStreamClient({ topic: '/event/LeadChangeManualEvent', replayId: -2 });
+	var str = cj.subscribe({ topic: '/event/LeadChangeManualEvent', oauth: app.oauth });
+	//console.log(util.inspect(cj, false, null));
+
+	str.on('connect', function(){
+		console.log('Connected to topic: ' + '/event/LeadChangeManualEvent');
 	});
 
 	str.on('error', function(error) {

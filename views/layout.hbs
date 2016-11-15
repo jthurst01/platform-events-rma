@@ -11,82 +11,59 @@
 			var socket = io();
 			socket.on('event-processed', function (data) {
 				var results = JSON.parse(data);
-				console.log(results);		
+				console.log(results);
 				
 				var returnRequestCreatedDate = new Date(results['payload']['Return_Request_Created_Date__c']);
 				var assetInstallDate = new Date(results['payload']['Asset_Install_Date__c']);
 				var lastUpdatedTime = new Date(results['payload']['Last_Updated_Time__c']);
+				var newPlatformEvent;
 
-				var newPlatformEvent = '<div class="slds-tile slds-media slds-box">' +
-					'	<div class="slds-media__figure">' +
-					'		<svg aria-hidden="true" class="slds-icon slds-icon--standard slds-icon-custom-96">' +
-					'			<use xlink:href="/assets/icons/custom-sprite/svg/symbols.svg#custom96"></use>' +
-					'		</svg>' +
-					'	</div>' +
-					'	<div class="slds-media__body">' +
-					'		<p class="slds-text-heading--label">Replay ID: ' + results['event']['replayId'] + '</p>' +
-					'		<h3 class="slds-truncate slds-text-heading--small" title="RMA Info">' + results['payload']['RMA_Number__c'] + '</h3>' +
+				if (results['event']['schema'] == 'LeadChangeManualEvent') {
+					newPlatformEvent = '<div class="slds-tile slds-media slds-box">' +
+						'	<div class="slds-media__figure">' +
+						'		<svg aria-hidden="true" class="slds-icon slds-icon--standard slds-icon-standard-lead">' +
+						'			<use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#lead"></use>' +
+						'		</svg>' +
+						'	</div>' +
+						'	<div class="slds-media__body">' +
+						'		<p class="slds-text-heading--label">Replay ID: ' + results['event']['replayId'] + '</p>' +
+						'		<h3 class="slds-truncate slds-text-heading--small" title="Lead Info">Lead ID: ' + results['payload']['ParentId'] + '</h3>' +
 					
-					'		<div class="slds-tile__detail slds-text-body--small">' +
-					'			<dl class="slds-dl--horizontal">' +
+						'		<div class="slds-tile__detail slds-text-body--small">' +
+						'			<dl class="slds-dl--horizontal">'; 
+				} else {
+					newPlatformEvent = '<div class="slds-tile slds-media slds-box">' +
+						'	<div class="slds-media__figure">' +
+						'		<svg aria-hidden="true" class="slds-icon slds-icon--standard slds-icon-custom-96">' +
+						'			<use xlink:href="/assets/icons/custom-sprite/svg/symbols.svg#custom96"></use>' +
+						'		</svg>' +
+						'	</div>' +
+						'	<div class="slds-media__body">' +
+						'		<p class="slds-text-heading--label">Replay ID: ' + results['event']['replayId'] + '</p>' +
+						'		<h3 class="slds-truncate slds-text-heading--small" title="RMA Info">' + results['payload']['RMA_Number__c'] + '</h3>' +
 					
-					'				<dt class="slds-dl--horizontal__label">' +
-					'					<p class="slds-truncate" title="Asset Type">Asset Type:</p>' +
-					'				</dt>' +
-					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Asset_Type__c'] + '">' + results['payload']['Asset_Type__c'] + '</p>' +
-					'				</dd>' +
-						
-					'				<dt class="slds-dl--horizontal__label">' +
-					'					<p class="slds-truncate" title="Serial Number">Serial Number:</p>' +
-					'				</dt>' +
-					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Serial_Number__c'] + '">' + results['payload']['Serial_Number__c'] + '</p>' +
-					'				</dd>' +
+						'		<div class="slds-tile__detail slds-text-body--small">' +
+						'			<dl class="slds-dl--horizontal">'; 
+				}
 					
-					'				<dt class="slds-dl--horizontal__label">' +
-					'					<p class="slds-truncate" title="Return Status">Return Status:</p>' +
-					'				</dt>' +
-					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Return_Status__c'] + '">' + results['payload']['Return_Status__c'] + '</p>' +
-					'				</dd>'  +
-						
-					'				<dt class="slds-dl--horizontal__label">' +
-					'					<p class="slds-truncate" title="Return Shipment Location">Return Shipment Location:</p>' +
-					'				</dt>' +
-					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Return_Shipment_Location__c'] + '">' + results['payload']['Return_Shipment_Location__c'] + '</p>' +
-					'				</dd>' +
-							
-					'				<dt class="slds-dl--horizontal__label">' +
-					'					<p class="slds-truncate" title="Return Notes">Return Notes:</p>' +
-					'				</dt>' +
-					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Return_Notes__c'] + '">' + results['payload']['Return_Notes__c'] + '</p>' +
-					'				</dd>' +
+					for (var key in results) {
+						if (key == 'payload') {
+							for (var key in results['payload']) {
+								if (results['payload'].hasOwnProperty(key)) {
+									if (results['payload'][key] != null) {
+										newPlatformEvent +='<dt class="slds-dl--horizontal__label">' +
+											'					<p class="slds-truncate" title="Asset Type">' + key + '</p>' +
+											'				</dt>' +
+											'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
+											'					<p class="slds-truncate" title="' + JSON.stringify(results['payload'][key]) + '">' + JSON.stringify(results['payload'][key]) + '</p>' +
+											'				</dd>';
+									}
+								}
+							}
+						}
+					}
 					
-					'				<dt class="slds-dl--horizontal__label">' +
-					'					<p class="slds-truncate" title="Asset Install Date">Asset Install Date:</p>' +
-					'				</dt>' +
-					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Asset_Install_Date__c'] + '">' + dateFormat(assetInstallDate, "m/d/yyyy h:MM:ss TT") + '</p>' +
-					'				</dd>' +
-					
-					'				<dt class="slds-dl--horizontal__label">' +
-					'					<p class="slds-truncate" title="Return Request Created Date">Return Request Created Date:</p>' +
-					'				</dt>' +
-					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Return_Request_Created_Date__c'] + '">' + dateFormat(returnRequestCreatedDate, "m/d/yyyy h:MM:ss TT") + '</p>' +
-					'				</dd>' +
-						
-					'				<dt class="slds-dl--horizontal__label">' +
-					'					<p class="slds-truncate" title="Last Update Time">Last Updated Time:</p>' +
-					'				</dt>' +
-					'				<dd class="slds-dl--horizontal__detail slds-tile__meta">' +
-					'					<p class="slds-truncate" title="' + results['payload']['Last_Updated_Time__c'] + '">' + dateFormat(lastUpdatedTime, "m/d/yyyy h:MM:ss TT") + '</p>' +
-					'				</dd>' +
-					
-					'			</dl>' +
+					newPlatformEvent += '			</dl>' +
 					'		</div>' +
 					'	</div>' +
 					'</div>';
@@ -117,6 +94,13 @@
 				$("#subscribeBtn").click(function(event) {
 					event.preventDefault();
 					$.post('/newSub', function(resp) {
+						console.log("post response: " + resp);
+					});
+				});
+				
+				$("#subscribeCDCBtn").click(function(event) {
+					event.preventDefault();
+					$.post('/newCDCSub', function(resp) {
 						console.log("post response: " + resp);
 					});
 				});
