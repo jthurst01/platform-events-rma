@@ -54,12 +54,12 @@ router.post('/newSub', function(req, res) {
 });
 
 router.post('/newCDCSub', function(req, res) {
-	var cj = app.org.createStreamClient({ topic: '/event/LeadChangeManualEvent', replayId: -2 });
-	var str = cj.subscribe({ topic: '/event/LeadChangeManualEvent', oauth: app.oauth });
+	var cj = app.org.createStreamClient({ topic: '/data/LeadChangeManualEvent', replayId: -2 });
+	var str = cj.subscribe({ topic: '/data/LeadChangeManualEvent', oauth: app.oauth });
 	//console.log(util.inspect(cj, false, null));
 
 	str.on('connect', function(){
-		console.log('Connected to topic: ' + '/event/LeadChangeManualEvent');
+		console.log('Connected to topic: ' + '/data/LeadChangeManualEvent');
 	});
 
 	str.on('error', function(error) {
