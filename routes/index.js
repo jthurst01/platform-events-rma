@@ -32,8 +32,11 @@ router.post('/', function(req, res) {
 });
 
 router.post('/newSub', function(req, res) {
-	var cj = app.org.createStreamClient({ topic: app.config.TOPIC, replayId: app.config.REPLAY_ID });
-	var str = cj.subscribe({ topic: app.config.TOPIC, oauth: app.oauth });
+	//var cj = app.org.createStreamClient({ topic: app.config.TOPIC, replayId: app.config.REPLAY_ID });
+	//var str = cj.subscribe({ topic: app.config.TOPIC, oauth: app.oauth });
+	var cj = app.org.createStreamClient({ topic: '/event/Return_Status__e', replayId: -2 });
+	var str = cj.subscribe({ topic: '/event/Return_Status__e', oauth: app.oauth });
+	
 	//console.log(util.inspect(cj, false, null));
 
 	str.on('connect', function(){
