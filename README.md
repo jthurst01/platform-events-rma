@@ -22,7 +22,7 @@ npm install
 This will clone this repo locally so you simply have to make your config changes and be up and running. Now replace your OAuth tokens and credentials in the config.js file then run the following to start the server:
 
 ```
-node app.js
+node bin/www
 ```
 
 Open your browser to  [http://localhost:3001](http://localhost:3001) and creat a Platform Event Salesforce and see it appear on the page.
