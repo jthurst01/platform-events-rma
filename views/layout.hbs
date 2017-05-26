@@ -18,16 +18,16 @@
 				var lastUpdatedTime = new Date(results['payload']['Last_Updated_Time__c']);
 				var newPlatformEvent;
 
-				if (results['event']['schema'] == 'LeadChangeManualEvent') {
+				if ('ChangeEventHeader' in results['payload']) {
 					newPlatformEvent = '<div class="slds-tile slds-media slds-box">' +
 						'	<div class="slds-media__figure">' +
-						'		<svg aria-hidden="true" class="slds-icon slds-icon--standard slds-icon-standard-lead">' +
-						'			<use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#lead"></use>' +
+						'		<svg aria-hidden="true" class="slds-icon slds-icon--standard slds-icon-custom-30">' +
+						'			<use xlink:href="/assets/icons/custom-sprite/svg/symbols.svg#custom30"></use>' +
 						'		</svg>' +
 						'	</div>' +
 						'	<div class="slds-media__body">' +
 						'		<p class="slds-text-heading--label">Replay ID: ' + results['event']['replayId'] + '</p>' +
-						'		<h3 class="slds-truncate slds-text-heading--small" title="Lead Info">Lead ID: ' + results['payload']['ParentId'] + '</h3>' +
+						'		<h3 class="slds-truncate slds-text-heading--small" title="Record Info">' + results['payload']['ChangeEventHeader']['entityName'] + ' ID: ' + results['payload']['ChangeEventHeader']['objectId'] + '</h3>' +
 					
 						'		<div class="slds-tile__detail slds-text-body--small">' +
 						'			<dl class="slds-dl--horizontal">'; 
@@ -98,12 +98,12 @@
 					});
 				//});
 				
-				//$("#subscribeCDCBtn").click(function(event) {
+				$("#subscribeCDCBtn").click(function(event) {
 					event.preventDefault();
 					$.post('/newCDCSub', function(resp) {
 						console.log("post response: " + resp);
 					});
-				//});
+				});
 			});
 			
 		</script>
