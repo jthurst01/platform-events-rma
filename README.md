@@ -14,7 +14,7 @@ Create a new Platform Event from the Setup Menu of your Salesforce Instance.
 ### Running the Application Locally
 
 ```
-git clone https://github.com/jthurst/platform-event-rma.git
+git clone https://github.com/jthurst01/platform-events-rma.git
 cd platform-event-rma
 npm install
 ```
