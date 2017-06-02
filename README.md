@@ -7,9 +7,9 @@ Node demo that streams Platform Events from Salesforce.com to the browser using 
 
 Setup a new Remote Access to get your OAuth tokens. If you are unfamiliar with settng this up, see 4:45 of Jeff Douglas' [Salesforce.com Primer for New Developers](http://www.youtube.com/watch?v=fq2ju2ML9GM). For your callback, simply use: http://localhost:3001/oauth/_callback
 
-### Create a Platform Event Definition in Salesforce.com
+### Install Package for Platform Event Demo
 
-Create a new Platform Event from the Setup Menu of your Salesforce Instance. 
+You can install a package for the RMA events at https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000HbtU.  Note that the package will add two new Platform Event definitions along with the asociated triggers.  After your config.js is set up, this should then allow the app to work.
 
 ### Running the Application Locally
 
@@ -25,4 +25,4 @@ This will clone this repo locally so you simply have to make your config changes
 node bin/www
 ```
 
-Open your browser to  [http://localhost:3001](http://localhost:3001) and creat a Platform Event Salesforce and see it appear on the page.
+Open your browser to  [http://localhost:3001](http://localhost:3001) and create an RMA Event in Salesforce from the left hand form, and see a Return Status event subscribed on the right hand pane.
